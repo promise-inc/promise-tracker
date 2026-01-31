@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" width="560" height="200">
+  <style>
+    .line-0 {
+      opacity: 0;
+      animation: typeLine 0.4s ease-out 0.3s forwards;
+    }
+    .line-1 {
+      opacity: 0;
+      animation: typeLine 0.4s ease-out 0.8s forwards;
+    }
+    .line-2 {
+      opacity: 0;
+      animation: typeLine 0.4s ease-out 1.3s forwards;
+    }
+    .line-3 {
+      opacity: 0;
+      animation: typeLine 0.4s ease-out 1.8s forwards;
+    }
+    .line-4 {
+      opacity: 0;
+      animation: typeLine 0.4s ease-out 2.3s forwards;
+    }
+    .line-5 {
+      opacity: 0;
+      animation: typeLine 0.4s ease-out 2.8s forwards;
+    }
+    @keyframes typeLine {
+      0% { opacity: 0; transform: translateX(-4px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes blinkCursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .blink-cursor {
+      fill: #ffffff;
+      animation: blinkCursor 1s step-end infinite;
+    }
+    .pulse-dot {
+      animation: pulse 2s ease-in-out infinite;
+    }
+  </style>
+
+  <defs>
+    <clipPath id="terminal-clip">
+      <rect x="0" y="0" width="560" height="200" rx="10" ry="10"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#terminal-clip)">
+    <rect x="0" y="0" width="560" height="200" fill="#0a0a0b"/>
+    <rect x="0" y="0" width="560" height="36" fill="#111113"/>
+    <line x1="0" y1="36" x2="560" y2="36" stroke="#0a0a0b" stroke-width="1" opacity="0.3"/>
+  </g>
+  <rect x="0" y="0" width="560" height="200" rx="10" ry="10" fill="none" stroke="#111113" stroke-width="1" opacity="0.5"/>
+
+  <circle cx="18" cy="18" r="6" fill="#ef4444"/>
+  <circle cx="38" cy="18" r="6" fill="#eab308"/>
+  <circle cx="58" cy="18" r="6" fill="#22c55e"/>
+
+  <text x="280" y="23" text-anchor="middle" fill="#71717a" font-family="'Inter','SF Pro Display',-apple-system,system-ui,sans-serif" font-size="12" font-weight="500">promise-tracker</text>
+
+  <g>
+    <text x="20" y="62" fill="#818cf8" font-family="'JetBrains Mono','Fira Code','SF Mono',Consolas,monospace" font-size="13" class="line-0">$ code src/index.ts</text>
+    <text x="20" y="84" fill="#a1a1aa" font-family="'JetBrains Mono','Fira Code','SF Mono',Consolas,monospace" font-size="13" class="line-1"><tspan fill="#4ade80">&#9679;</tspan> Heartbeat sent <tspan fill="#71717a">— src/index.ts (typescript)</tspan></text>
+    <text x="20" y="106" fill="#a1a1aa" font-family="'JetBrains Mono','Fira Code','SF Mono',Consolas,monospace" font-size="13" class="line-2"><tspan fill="#4ade80">&#9679;</tspan> Heartbeat sent <tspan fill="#71717a">— src/api.ts (typescript)</tspan></text>
+    <text x="20" y="128" fill="#a1a1aa" font-family="'JetBrains Mono','Fira Code','SF Mono',Consolas,monospace" font-size="13" class="line-3"><tspan fill="#4ade80">&#9679;</tspan> File saved <tspan fill="#71717a">— src/api.ts (write heartbeat)</tspan></text>
+    <text x="20" y="150" fill="#e4e4e7" font-family="'JetBrains Mono','Fira Code','SF Mono',Consolas,monospace" font-size="13" class="line-4">&#128337; Today: <tspan fill="#818cf8">2h 34m</tspan> <tspan fill="#71717a">| Top: my-project</tspan></text>
+    <text x="20" y="172" fill="#71717a" font-family="'JetBrains Mono','Fira Code','SF Mono',Consolas,monospace" font-size="13" class="line-5">Status bar: <tspan fill="#e4e4e7">$(clock) 2h 34m</tspan></text>
+  </g>
+  <rect class="blink-cursor" x="20" y="180" width="8" height="14" rx="1"/>
+  <text x="552" y="194" text-anchor="end" fill="#e4e4e7" opacity="0.03" font-family="'Inter','SF Pro Display',-apple-system,system-ui,sans-serif" font-size="10">@promise-inc</text>
+</svg>
