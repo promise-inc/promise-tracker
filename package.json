@@ -1,0 +1,68 @@
+{
+  "name": "promise-tracker",
+  "displayName": "Promise Tracker",
+  "description": "Track your editor activity and sync with Promise Hub",
+  "version": "0.1.0",
+  "publisher": "promise-hub",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1e1e2e",
+    "theme": "dark"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "promise-tracker.login",
+        "title": "Promise Tracker: Login"
+      },
+      {
+        "command": "promise-tracker.logout",
+        "title": "Promise Tracker: Logout"
+      },
+      {
+        "command": "promise-tracker.status",
+        "title": "Promise Tracker: Status"
+      },
+      {
+        "command": "promise-tracker.dashboard",
+        "title": "Promise Tracker: Open Dashboard"
+      }
+    ],
+    "configuration": {
+      "title": "Promise Tracker",
+      "properties": {
+        "promise-tracker.apiUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Promise Hub API URL (leave empty to use .promise-hub.json)"
+        },
+        "promise-tracker.heartbeatInterval": {
+          "type": "number",
+          "default": 120,
+          "description": "Heartbeat interval in seconds (normal activity)"
+        },
+        "promise-tracker.debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable debug logging"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.0"
+  }
+}
